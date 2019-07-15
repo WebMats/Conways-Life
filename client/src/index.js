@@ -6,7 +6,8 @@ import App from './App';
 
 const app = (
     <BrowserRouter>
-        <Link to="/description">description</Link>
+        <Link to="/">Home</Link>
+        <Link to="/description">Description</Link>
         <App />
     </BrowserRouter>
 )
