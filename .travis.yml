@@ -16,7 +16,7 @@ jobs:
         quiet: true
       env:
         global:
-          - TRAVIS_BUILD_DIR = ./client
+          - TRAVIS_BUILD_DIR=./client
       branches:
         only:
           - master
