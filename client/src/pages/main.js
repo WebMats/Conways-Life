@@ -6,8 +6,10 @@ import Rules from '../containers/rules';
 const main = () =>  {
     return (
         <>
-            <Game />
-            <Rules />
+            <div className="content-wrapper">
+                <Game />
+                <Rules />
+            </div>
             <About />
         </>
     )
