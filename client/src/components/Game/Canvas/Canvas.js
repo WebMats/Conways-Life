@@ -1,17 +1,17 @@
-import React, { useRef, useEffect, useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import canvInit from './canvas-logic';
 
 const Canvas = () => {
+    const [controls, setControls] = useState({})
     const measuredRef = useCallback((node) => {
             if (node !== null) {
-                canvInit(node)
+                const controls = canvInit(node)
+                setControls(controls)
             }
             else {
-                return
+                setControls({})
             }
-        },
-        [],
-    )    
+        }, [] )
     return <canvas id="game" height="400" width="400" ref={measuredRef}></canvas>
 }
 
