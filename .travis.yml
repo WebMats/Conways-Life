@@ -14,9 +14,6 @@ jobs:
       sudo: required
       git:
         quiet: true
-      env:
-        global:
-          - TRAVIS_BUILD_DIR=TRAVIS_BUILD_DIR/client
       branches:
         only:
           - master
@@ -24,6 +21,7 @@ jobs:
       node_js:
         - "10"
       dist: trusty
+      before_install: cd client
       install:
         - npm install
       script:
