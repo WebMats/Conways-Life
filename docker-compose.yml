@@ -9,3 +9,11 @@ services:
     volumes:
       - /usr/app/node_modules
       - ./client:/usr/app
+  tests:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/app/node_modules
+      - ./client:/usr/app
+    command: ["npm", "run", "test"]
