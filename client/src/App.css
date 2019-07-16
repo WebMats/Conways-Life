@@ -6,3 +6,16 @@
   display: flex;
   justify-content: space-around;
 }
+
+.game-button {
+  height: 3.0rem;
+  width: 10rem;
+  padding: 4px 1rem;
+  margin: 0 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 3rem;
+}
+
+.game-buttons {
+  margin-top: 1rem;
+}

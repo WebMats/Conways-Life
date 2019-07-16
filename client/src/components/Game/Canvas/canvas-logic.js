@@ -1,5 +1,5 @@
 // canv width x height = 400 x 400
-const squares_per_row = 10;
+const squares_per_row = 4;
 const canvasBlocks = [];
 let width, height, ctx;
 
@@ -18,13 +18,6 @@ const Block = (index, fill, x, y) => {
             ctx.fillRect(this.position[0], this.position[1], width / squares_per_row , height /squares_per_row);
             setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 3800)
         },
-        // [Symbol.iterator] () {
-        //     return {
-        //         next: () => {
-        //             return this.index
-        //         }
-        //     }
-        // }
     }
 }
 
@@ -34,10 +27,11 @@ export default (canvEl) => {
     height = canvEl.height;
     if (!ctx) return;
     generateBlocks()
-    // function animate() {
-    //     // setTimeout(() => requestAnimationFrame(animate), 500)
-    // }
-    // animate()
+    return {
+        change () {
+            
+        }
+    }
 }
 
 function generateBlocks() {
@@ -56,6 +50,7 @@ function generateBlocks() {
             curY = curY + height / squares_per_row
         }
     }
+    return canvasBlocks;
 }
 
 function getNeighbors(index) {
