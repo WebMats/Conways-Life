@@ -35,11 +35,8 @@ const Block = (index, fill, x, y) => {
                 ctx.fillStyle = this.fill
                 ctx.fillRect(this.position[0], this.position[1], width / squares_per_row , height /squares_per_row);
             }
-            setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 5000)
+            setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 200)
         },
-        getNeighborsFill (index) {
-            return canvasBlocks[index - 1].fill
-        }
     }
 }
 
@@ -55,7 +52,6 @@ export default (canvEl, status) => {
     if (!ctx) return;
     generateBlocks()
     start()
-    const first = canvasBlocks[5].neighbors[0]
     // return {
     //     change () {
             
@@ -70,7 +66,7 @@ function generateBlocks() {
     for (let i = 1; i <= squares_per_row * squares_per_row;i++) {
         let ranNumber = Math.random()
         let fill;
-        if (ranNumber < .5 && ranNumber > .2) { fill = '#FFFFFF' } 
+        if (ranNumber < .6) { fill = '#FFFFFF' } 
         else { fill = '#000000' } 
         const block = Block(i, fill, curX, curY);
         canvasBlocks.push(block)

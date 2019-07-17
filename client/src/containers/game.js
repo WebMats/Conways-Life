@@ -7,12 +7,20 @@ import Controls from '../components/Game/Controls/Controls';
 const Main = () => {
     const [gameStatus, setGameStatus] = useState({
         play: false,
+        refreshed: false
     })
     return (
         <main>
             <div className="game-controls-container">
-                <Game play={gameStatus.play}  />
-                <Controls play={() => setGameStatus({ play: true })} pause={() => setGameStatus({ play: false })} />
+                {!gameStatus.refreshed && <Game play={gameStatus.play}  />}
+                <Controls 
+                    play={() => setGameStatus({ play: true })} 
+                    pause={() => setGameStatus({ play: false })}
+                    refresh={() => {
+                        setGameStatus({ refreshed: true })
+                        setGameStatus({ refreshed: false })
+                    }}
+                />
             </div>
         </main>
     )

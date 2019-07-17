@@ -6,7 +6,7 @@ const controls = (props) => {
         <form className="game-buttons">
             <Button clicked={props.play}>Play</Button>
             <Button clicked={props.pause}>Pause</Button>
-            <Button clicked={() => {console.log("Stop")}}>Stop</Button>
+            <Button clicked={props.refresh}>Stop</Button>
         </form>
     )
 }
