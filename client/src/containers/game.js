@@ -4,15 +4,18 @@ import Controls from '../components/Game/Controls/Controls';
 // import ErrorBoundary from '../pages/error';
 
 
-const game = () => {
+const Main = () => {
+    const [gameStatus, setGameStatus] = useState({
+        play: false,
+    })
     return (
-        <section>
+        <main>
             <div className="game-controls-container">
-                <Game />
-                <Controls />
+                <Game play={gameStatus.play}  />
+                <Controls play={() => setGameStatus({ play: true })} pause={() => setGameStatus({ play: false })} />
             </div>
-        </section>
+        </main>
     )
 }
 
-export default game
+export default Main
