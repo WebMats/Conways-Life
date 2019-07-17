@@ -2,10 +2,10 @@ import React from 'react'
 import Canvas from './Canvas/Canvas';
 
 
-const game = () => {
+const game = (props) => {
     return (
         <div>
-            <Canvas />
+            <Canvas play={props.play} />
         </div>
     )
 }

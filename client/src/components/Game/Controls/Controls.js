@@ -4,8 +4,8 @@ import Button from '../../UI/Button/Button';
 const controls = (props) => {
     return (
         <form className="game-buttons">
-            <Button clicked={() => {console.log("Play")}}>Play</Button>
-            <Button clicked={() => {console.log("Pause")}}>Pause</Button>
+            <Button clicked={props.play}>Play</Button>
+            <Button clicked={props.pause}>Pause</Button>
             <Button clicked={() => {console.log("Stop")}}>Stop</Button>
         </form>
     )
