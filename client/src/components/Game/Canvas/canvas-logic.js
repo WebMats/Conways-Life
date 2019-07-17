@@ -1,7 +1,7 @@
 // canv width x height = 400 x 400
 const squares_per_row = 8;
-const canvasBlocks = [];
-let width, height, ctx;
+let canvasBlocks = [];
+let width, height, ctx, isPaused;
 
 
 export const start = () => {
@@ -26,15 +26,16 @@ const Block = (index, fill, x, y) => {
                     aliveNeighbors++
                 }
             }
-            // console.log("index: ", this.index, aliveNeighbors)
-            if (this.fill === "#FFFFFF" && aliveNeighbors === 3) {
-                this.fill = "#000000"
-            } else if (this.fill === "#000000" && !(aliveNeighbors === 2 || aliveNeighbors === 3)) {
-                this.fill = "#FFFFFF"
+            if (isPaused) {
+                if (this.fill === "#FFFFFF" && aliveNeighbors === 3) {
+                    this.fill = "#000000"
+                } else if (this.fill === "#000000" && !(aliveNeighbors === 2 || aliveNeighbors === 3)) {
+                    this.fill = "#FFFFFF"
+                }
+                ctx.fillStyle = this.fill
+                ctx.fillRect(this.position[0], this.position[1], width / squares_per_row , height /squares_per_row);
             }
-            ctx.fillStyle = this.fill
-            ctx.fillRect(this.position[0], this.position[1], width / squares_per_row , height /squares_per_row);
-            setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 500)
+            setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 5000)
         },
         getNeighborsFill (index) {
             return canvasBlocks[index - 1].fill
@@ -42,7 +43,12 @@ const Block = (index, fill, x, y) => {
     }
 }
 
-export default (canvEl) => {
+export default (canvEl, status) => {
+    isPaused = status
+    if (canvasBlocks.length > 0) {
+        return
+    }
+    canvasBlocks = []
     ctx = canvEl.getContext('2d');
     width = canvEl.width;
     height = canvEl.height;
