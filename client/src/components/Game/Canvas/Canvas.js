@@ -5,7 +5,7 @@ const Canvas = (props) => {
     const [controls, setControls] = useState({})
     const measuredRef = useCallback((node) => {
             if (node !== null) {
-                const controls = canvInit(node)
+                const controls = canvInit(node, props.play)
                 setControls(controls)
             }
             else {
