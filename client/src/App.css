@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 3rem 0rem;
 }
 
 .content-wrapper {
@@ -18,4 +19,42 @@
 
 .game-buttons {
   margin-top: 1rem;
+}
+
+.game-generation {
+  font-size: 2.4rem;
+  margin: 2rem 0rem;
+}
+
+.rules {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.rules > h3 {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+}
+
+.rule {
+  font-size: 1.4rem;
+  line-height: 1.6;  
+  margin: 1rem 0rem;
+}
+
+.about {
+  margin-top: 3rem;
+  padding: 0rem 1rem;
+}
+
+.about > h3 {
+  font-size: 2rem;
+  margin: 1.6rem 0rem;
+}
+
+.about > p {
+  font-size: 1.5rem;
+  margin: 1rem 0rem;
+  text-align: left;
+  line-height: 1.4;
 }
