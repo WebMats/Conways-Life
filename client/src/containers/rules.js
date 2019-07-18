@@ -3,8 +3,8 @@ import RulesList from '../components/RulesList/RulesList';
 
 const rules = (props) => {
     return (
-        <section>
-            RULES:
+        <section className="rules">
+            <h3>RULES:</h3>
             <RulesList rules={arrRules} />
         </section>
     )
@@ -13,7 +13,7 @@ const rules = (props) => {
 export default rules
 
 const arrRules = [
-    "rule 1",
-    "rule 2",
-    "rule 3"
+    "• A typical cell has 8 neighbors, 4 in the diagonol directions, and 4 in the cross directions",
+    "• If the cell is alive and has 2 or 3 neighbors, then it remains alive. Else it dies.",
+    "• If the cell is dead and has exactly 3 neighbors, then it comes to life. Ele it remains dead.",
 ]

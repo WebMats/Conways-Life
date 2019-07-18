@@ -1,5 +1,5 @@
 // canv width x height = 400 x 400
-const squares_per_row = 8;
+const squares_per_row = 200;
 let canvasBlocks = [];
 let width, height, ctx, isPaused;
 
@@ -35,7 +35,7 @@ const Block = (index, fill, x, y) => {
                 ctx.fillStyle = this.fill
                 ctx.fillRect(this.position[0], this.position[1], width / squares_per_row , height /squares_per_row);
             }
-            setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 200)
+            setTimeout(() => requestAnimationFrame(this.animate.bind(this)), 1000)
         },
     }
 }
@@ -66,7 +66,7 @@ function generateBlocks() {
     for (let i = 1; i <= squares_per_row * squares_per_row;i++) {
         let ranNumber = Math.random()
         let fill;
-        if (ranNumber < .6) { fill = '#FFFFFF' } 
+        if (ranNumber < .85) { fill = '#FFFFFF' } 
         else { fill = '#000000' } 
         const block = Block(i, fill, curX, curY);
         canvasBlocks.push(block)
