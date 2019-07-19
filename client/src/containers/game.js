@@ -16,7 +16,7 @@ const Main = () => {
             if (gameStatus.play === true) {
                 setGen(generation + 1)
             }
-        }, 1000)
+        }, 8)
     })
     return (
         <main>

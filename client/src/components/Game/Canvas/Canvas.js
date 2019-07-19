@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import canvInit from './canvas-logic';
+import canvInit from './canvas-logic-optomized';
 
 const Canvas = (props) => {
     const [controls, setControls] = useState({})
