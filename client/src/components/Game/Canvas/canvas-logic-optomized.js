@@ -1,8 +1,8 @@
-const squaresPerRow = 400;
+const squaresPerRow = 200;
 let curState = [] ;
 let allNeighbors = [];
 let nextState = new Array(squaresPerRow * squaresPerRow);
-let width, height, ctx, isPlaying = false;
+let widthRes, heigthRes, width, height, ctx, isPlaying = false;
 
 export const start = () => {
     let curX = 0;
@@ -45,6 +45,8 @@ export default (canvEl, status) => {
     ctx = canvEl.getContext('2d');
     width = canvEl.width;
     height = canvEl.height;
+    widthRes = width / squaresPerRow;
+    heigthRes = height / squaresPerRow;
     if (!ctx) return;
     initCurState()
     start()
@@ -52,7 +54,7 @@ export default (canvEl, status) => {
 
 const paintBlock = (x, y, fill) => {
     ctx.fillStyle = fill;
-    ctx.fillRect(x, y, width / squaresPerRow , height / squaresPerRow);
+    ctx.fillRect(x, y, widthRes , heigthRes);
 }
 
 function initCurState() {
